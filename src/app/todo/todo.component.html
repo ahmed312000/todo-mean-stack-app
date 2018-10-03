@@ -1,0 +1,48 @@
+
+
+
+	<div [ngClass]="{
+	    'page4' : ispage4,
+	     'page5' : ispage5,
+	     'page6' : ispage6,
+	     'page7' : ispage7,
+	     'page8' : ispage8,
+	     'page9' : ispage9,
+	     'page10' : ispage10
+
+	    }" class="bg-image img-responsive">
+	        <div>
+
+	        	<div class="container">
+
+
+						<button class="btn" (click)="onToggled()" id="toggle" >Toggle</button>
+						<button class="btn" id="refresh" (click)="onRefresh()" >Refresh</button>
+	    
+	    
+	                        <form [formGroup]="f" (ngSubmit)="onAdd(input)">
+	                            <input id="customInput" formControlName="input" type="text" #input class="form-control inputCustom" placeholder="add your todos here">
+	                    
+	                            <button [disabled]="f.invalid" class="btn btn-primary btnCustom" type='submit'>Add Todo</button>
+	                        </form>
+	                    
+	                        <div id="todo">
+	                            <ul class="list-group" >
+	                                <li
+	                                (click)="onDelete(todo.todoId , i)" 
+	                                class="list-group-item itemCustom" id ="todo-item" 
+	                                *ngFor="let todo of todos ; i as index">{{ todo.content }}<span 
+	                                 id="drop">drop</span></li>
+	                            </ul>
+	                        </div>
+	                    
+	                    
+	                        
+
+
+	        </div>
+	</div>
+
+</div>
+
+
